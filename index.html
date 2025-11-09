@@ -179,7 +179,7 @@
             font-size: 1.1rem;
         }
         .award-list li::before {
-            content: 'Trophy';
+            content: '🏆';
             position: absolute;
             left: 0;
             top: 2px;
@@ -217,6 +217,7 @@
             nav ul { gap: 20px; }
             nav a { font-size: 0.95rem; }
             h2 { font-size: 2.2rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -229,7 +230,7 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#interests">Interests</a></li>
+            <li><a href="#interests">Research Interests</a></li>
             <li><a href="#publications">Publications</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -247,24 +248,27 @@
                 “I would rather have questions that can’t be answered rather than answers that can’t be questioned” – Richard Feynman
             </p>
             <p style="font-size:1.1rem; max-width:900px; margin:0 auto;">
-                Solution-driven critical thinking research scholar from the Indian Institute of Science with an interest in electronic systems design along with a passion for designing products that are simple in design and efficient, from the conceptual stage to mass production.
+                A strong believer in finding that tough question to solve. Solution-driven critical thinking research scholar from the Indian Institute of Science with an interest in electronic systems design along with a passion for designing products that are simple in design and efficient, from the conceptual stage to mass production.
             </p>
             <p style="font-size:1.1rem; max-width:900px; margin:30px auto 0;">
-                Currently working on <strong>Situation Awareness in construction</strong> and how visual data impacts situational awareness on construction sites under the guidance of <strong>Prof. Vishal Singh</strong>.
+                I am currently working on Situation awareness in construction and how the visual data can impact the situational awareness seen in the construction sites under the guidance of Prof. Vishal Singh. With the construction industry accounting for a high percentage of the GDP in Indian economy, it is necessary to improve the situational awareness in construction sites. I am open to collaborations or other research type activities.
             </p>
         </section>
 
         <section id="interests">
             <h2>Research Interests</h2>
             <div class="tag-list">
-                <span class="tag">Mobile Robots</span>
-                <span class="tag">Decision Making</span>
                 <span class="tag">Situation Awareness</span>
+                <span class="tag">Socio-Technical Systems</span>
+                <span class="tag">Product Design</span>
                 <span class="tag">Computer Vision</span>
                 <span class="tag">Artificial Intelligence</span>
                 <span class="tag">Machine Learning</span>
-                <span class="tag">Intelligent Agents</span>
                 <span class="tag">Neural Networks</span>
+                <span class="tag">Vision-Language Models</span>
+                <span class="tag">Active Learning</span>
+                <span class="tag">Recommendation Systems</span>
+                <span class="tag">Mobile Robots</span>
                 <span class="tag">Human-Machine Interaction</span>
             </div>
         </section>
@@ -283,17 +287,21 @@
                     <p>P Prabhu, V Singh</p>
                 </div>
                 <div class="card">
-                    <h3>Feasibility study of multi autonomous mobile robots (AMRs) motion planning in smart warehouse environment</h3>
-                    <p><strong>2021</strong> — Ubiquitous Robots (UR)</p>
+                    <h3>Feasibility study of multi autonomous mobile robots (amrs) motion planning in smart warehouse environment</h3>
+                    <p><strong>2021</strong> — 2021 18th International Conference on Ubiquitous Robots (UR)</p>
+                    <p>P Prabhu, AR Chowdhury</p>
                     <p><a href="https://doi.org/10.1109/UR52253.2021.9494634">DOI: 10.1109/UR52253.2021.9494634</a></p>
                 </div>
                 <div class="card">
                     <h3>Improvement of Warehouse Productivity using Autonomous Mobile Robot in Smart Manufacturing Environment</h3>
-                    <p><strong>2021</strong> — iRobotics Journal (RST)</p>
+                    <p><strong>2021</strong> — iRobotics, the Journal of Robotics Society of Taiwan (RST)</p>
+                    <p>Prajwal Prabhu, Abhra Roy Chowdhury</p>
                 </div>
                 <div class="card">
                     <h3>Interlinking industry 4.0 and academia through robotics and automation: an Indian perspective</h3>
-                    <p><strong>2020</strong> — Smart Manufacturing (IntechOpen)</p>
+                    <p><strong>2020</strong> — Smart Manufacturing-When Artificial Intelligence Meets the Internet of Things</p>
+                    <p>P Prabhu, S Raj, AR Chowdhury</p>
+                    <p><a href="https://www.intechopen.com/chapters/72826">Available from IntechOpen</a></p>
                     <p><a href="https://doi.org/10.5772/intechopen.92608">DOI: 10.5772/intechopen.92608</a></p>
                 </div>
             </div>
@@ -303,16 +311,28 @@
             <h2>Relevant Projects</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Contextual Reasoning Divergence Framework (CRDF)</h3>
-                    <p>Lightweight visual reasoning with Situation Awareness on CIFAR-10/Fashion-MNIST using ResNet-18, custom ViT, fine-tuned CLIP. Added predictive uncertainty, attention-guided perturbations, Grad-CAM, and Monte Carlo dropout for explainable failure analysis.</p>
+                    <h3>Contextual Reasoning Divergence Framework (CRDF): A Lightweight Visual Reasoning approach</h3>
+                    <ul>
+                        <li>Implemented CRDF with Situation Awareness on CIFAR-10/Fashion-MNIST using CNN, ResNet-18, custom ViT, and fine-tuned CLIP; added predictive uncertainty, attention-guided perturbations, and feature stability for robust edge-case detection.</li>
+                        <li>Enhanced reasoning divergence (RDS) via iterative local/global masking with attention prioritization; Integrated Grad-CAM, ViT/CLIP attention maps, and Monte Carlo dropout for explainable failure analysis</li>
+                        <li>Optimized for Colab GPU; mixed precision, batch size 16, 3 epochs, memory cleanup; Utilized diagnostic framework.</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Ultra-Lightweight CLIP-FBS Recommendation System</h3>
-                    <p>Symbolic-multimodal system fusing CLIP vision-language embeddings with FBS knowledge graph and adaptive GNN. Real-time user feedback updates graph edges; includes counterfactual explanations.</p>
+                    <h3>Ultra-Lightweight CLIP-FBS Recommendation System for CPU-based Environments</h3>
+                    <ul>
+                        <li>Developed a symbolic-multimodal recommendation system integrating real CLIP (ViT-B/32) for vision-language embeddings with a Function-Behaviour-Structure (FBS) knowledge graph and adaptive GNN to fuse symbolic reasoning with neural similarity for interpretable product recommendations.</li>
+                        <li>Implemented hybrid neural-symbolic retrieval combining CLIP-based cosine similarity with symbolic logic constraints (e.g., "wearable & durable") and counterfactual explanations, enabling filtered, explainable recommendations across 25 real-image products.</li>
+                        <li>Engineered feedback-driven graph adaptation using user likes/dislikes to dynamically add edges in the FBS graph, visualized via NetworkX, with on-the-fly GNN retraining and re-encoding to reflect evolving user preferences in real time.</li>
+                    </ul>
                 </div>
                 <div class="card">
                     <h3>Attention-Guided Active Learning for Vision-Language Models</h3>
-                    <p>Hybrid sampling strategy combining prediction uncertainty and attention-driven diversity. Attention-regularised fine-tuning improves cross-task adaptability.</p>
+                    <ul>
+                        <li>Proposed an attention-guided active learning framework applicable to transformer-based vision-language models.</li>
+                        <li>Designed a hybrid sampling strategy that integrates prediction uncertainty with attention-driven diversity for efficient data selection.</li>
+                        <li>Implemented attention-regularised fine-tuning to improve model adaptability across tasks and domains.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -322,17 +342,20 @@
             <div class="grid">
                 <div class="card">
                     <h3>Indian Institute of Science</h3>
-                    <p><strong>Center for Nanoscience and Engineering | Intern</strong><br>March 2018 – September 2018</p>
+                    <p><strong>Center for Nanoscience and Engineering | Intern</strong><br>March 2018 - September 2018</p>
                     <ul style="margin-top:10px; padding-left:20px;">
-                        <li>Solar microinverter system architecture for GaN applications</li>
-                        <li>Hardware design for silicon devices & GaN migration roadmap</li>
+                        <li>Understanding requirements for usage of solar-based microinverter with potential for use in GaN-based applications</li>
+                        <li>Ideate about the different possible configurations for the microinverter and create a system architecture for the solar microinverter</li>
+                        <li>Hardware design of the microinverter for silicon-based devices and mapping changes required for GaN based devices for the proposed system designed</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Bharat Heavy Electricals Limited</h3>
-                    <p><strong>Intern</strong><br>May 2014 – July 2014</p>
+                    <p><strong>Intern</strong><br>May 2014 - July 2014</p>
                     <ul style="margin-top:10px; padding-left:20px;">
-                        <li>Lighting system design for supercritical thermal power plant</li>
+                        <li>Understand how complex organizations work, which have different disciplines</li>
+                        <li>Understand the various components that are involved in thermal power plant</li>
+                        <li>Estimate the lighting system requirements for a supercritical thermal power plant</li>
                     </ul>
                 </div>
             </div>
@@ -342,16 +365,20 @@
             <h2>Education</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Doctor of Philosophy – Product Design and Engineering</h3>
-                    <p><strong>Indian Institute of Science</strong> | 2020 – Present</p>
+                    <h3>Doctor of Philosophy - Product Design and Engineering</h3>
+                    <p><strong>Indian Institute of Science</strong> | 2020 - Current</p>
+                    <ul style="margin-top:10px; padding-left:20px;">
+                        <li>Research involves understanding how situational awareness impacts socio-technical systems</li>
+                        <li>The fundamental part of the research looked at assessing the transactions that happen in an organization and how that would lead to the creation of situational awareness. Further how this would lead to identifying potential problems that may affect the organization</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>Master of Technology – Power Electronics</h3>
-                    <p><strong>RV College of Engineering</strong> | 2017 – 2019</p>
+                    <h3>Master of Technology - Power Electronics</h3>
+                    <p><strong>RV College of Engineering</strong> | 2017 - 2019</p>
                 </div>
                 <div class="card">
-                    <h3>Bachelor of Engineering – Electrical and Electronics</h3>
-                    <p><strong>Dayananda Sagar Academy of Technology and Management</strong> | 2013 – 2017</p>
+                    <h3>Bachelor of Engineering - Electrical and Electronics</h3>
+                    <p><strong>Dayananda Sagar Academy of Technology and Management</strong> | 2013 - 2017</p>
                 </div>
             </div>
         </section>
@@ -364,16 +391,15 @@
                 <span class="tag">Embedded System Design</span>
                 <span class="tag">Internet of Things</span>
                 <span class="tag">Digital Image Processing</span>
-                <span class="tag">System Design</span>
             </div>
         </section>
 
         <section id="awards">
-            <h2>Awards & Recognition</h2>
+            <h2>Awards and Recognition</h2>
             <ul class="award-list">
-                <li>Published articles on Industry 4.0 & academia linkage through robotics (Indian perspective)</li>
-                <li>Invigilator for final-year project evaluation at alma mater</li>
-                <li>Coursera certification in "Computer Vision"</li>
+                <li>Have written articles about interlinking industry 4.0 and academia through robotics with an Indian perspective</li>
+                <li>Have been called as an invigilator by my bachelor's alma mater to evaluate the projects done by final semester students</li>
+                <li>I have been certified by coursera on "Computer vision".</li>
             </ul>
         </section>
 
@@ -382,22 +408,22 @@
             <div class="contact-grid">
                 <div class="contact-item">
                     <p>Email</p>
-                    <a href="mailto:prajwal.prabhu10.pp@gmail.com">prajwal.prabhu10.pp@gmail.com</a>
+                    <a href="mailto:prajwalp@iisc.ac.in">prajwalp@iisc.ac.in</a>
                 </div>
                 <div class="contact-item">
                     <p>Google Scholar</p>
-                    <a href="https://scholar.google.com/citations?user=7fJIjAUAAAAJ&hl=en">View Profile</a>
+                    <a href="https://scholar.google.com/citations?user=7fJIjAUAAAAJ&hl=en">Profile</a>
                 </div>
                 <div class="contact-item">
                     <p>LinkedIn</p>
-                    <a href="https://in.linkedin.com/in/prajwal-prabhu-84694a12b">View Profile</a>
+                    <a href="https://in.linkedin.com/in/prajwal-prabhu-84694a12b">Profile</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 Prajwal Prabhu. All rights reserved.</p>
+        <p>&copy; 2025 Prajwal Prabhu. All rights reserved.</p>
     </footer>
 </body>
 </html>
