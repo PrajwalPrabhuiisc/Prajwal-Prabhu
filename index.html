@@ -4,112 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prajwal Prabhu - Research Scholar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-blue: #007bff;
+            --accent-orange: #fd7e14;
+            --secondary-green: #28a745;
+            --highlight-yellow: #ffc107;
+            --background-light: #f8f9fa;
+            --text-dark: #212529;
+            --card-bg: #ffffff;
+            --hover-bg: #e9ecef;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--background-light);
+            color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
-            background: linear-gradient(135deg, #007bff, #00bfff);
+            background: linear-gradient(135deg, var(--primary-blue), #00c6ff);
             color: white;
             text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         header h1 {
             margin: 0;
-            font-size: 3em;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-size: 3.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
         }
         header p {
-            margin: 5px 0 0;
-            font-size: 1.4em;
+            margin: 10px 0 0;
+            font-size: 1.6em;
+            position: relative;
+            z-index: 1;
         }
         nav {
-            background-color: #fd7e14;
+            background-color: var(--accent-orange);
             padding: 15px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        nav:hover {
+            background-color: #ff9f43;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-            transition: color 0.3s;
+            margin: 0 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--highlight-yellow);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
         }
         nav a:hover {
-            color: #ffc107;
+            color: var(--highlight-yellow);
         }
         section {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
         }
-        section:hover {
-            transform: translateY(-5px);
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        section:nth-child(even) {
+            animation-delay: 0.2s;
         }
         section h2 {
-            color: #198754;
-            border-bottom: 3px solid #ffc107;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 2em;
+            color: var(--secondary-green);
+            border-bottom: 4px solid var(--highlight-yellow);
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 700;
+            position: relative;
         }
-        .experience-item, .project-item, .education-item, .publication-item {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #e9ecef;
-            border-left: 5px solid #007bff;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+        section h2::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            transform: translateY(-50%);
         }
-        .experience-item:hover, .project-item:hover, .education-item:hover, .publication-item:hover {
+        .item {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: var(--hover-bg);
+            border-left: 6px solid var(--primary-blue);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        .item:hover {
+            transform: translateX(5px);
             background-color: #d4edda;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
-        .skills-list, .interests-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        .list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
         }
-        .skills-list span, .interests-list span {
-            background-color: #fd7e14;
+        .list span {
+            background-color: var(--accent-orange);
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .list span:hover {
+            transform: scale(1.05);
         }
         .awards-list {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .awards-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        .awards-list li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         .contact-info {
-            font-size: 1.1em;
+            font-size: 1.2em;
         }
         .contact-info a {
-            color: #007bff;
+            color: var(--primary-blue);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .contact-info a:hover {
-            text-decoration: underline;
+            color: var(--accent-orange);
         }
         footer {
-            background-color: #007bff;
+            background-color: var(--primary-blue);
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 80px 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            section {
+                margin: 40px 15px;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -140,7 +246,7 @@
     
     <section id="research-interests">
         <h2>Research Interests</h2>
-        <div class="interests-list">
+        <div class="list interests-list">
             <span>Mobile Robots</span>
             <span>Decision Making</span>
             <span>Situation Awareness</span>
@@ -155,32 +261,32 @@
     
     <section id="publications">
         <h2>Publications</h2>
-        <div class="publication-item">
+        <div class="item publication-item">
             <h3>Diagnosing Facility Management Work Systems for Factors Impacting Situation Awareness</h3>
             <p>Authors: U Jodawat, P Prabhu, V Singh, S Kumar T</p>
             <p>Year: 2024</p>
             <p>EC3 Conference 2024, 5, 0-0</p>
         </div>
-        <div class="publication-item">
+        <div class="item publication-item">
             <h3>Fostering Experiential Learning and Situational Awareness Via Reporting and Broadcasting About Pilot Projects</h3>
             <p>Authors: P Prabhu, V Singh</p>
             <p>Year: 2024</p>
             <p>International Conference on Smart Technologies & Education, 3-14</p>
         </div>
-        <div class="publication-item">
-            <h3>Feasibility study of multi-autonomous mobile robots (amrs) motion planning in smart warehouse environment</h3>
+        <div class="item publication-item">
+            <h3>Feasibility study of multi autonomous mobile robots (amrs) motion planning in smart warehouse environment</h3>
             <p>Authors: P Prabhu, AR Chowdhury</p>
             <p>Year: 2021</p>
             <p>2021 18th International Conference on Ubiquitous Robots (UR), 380-385</p>
             <p><a href="https://doi.org/10.1109/UR52253.2021.9494634">DOI: 10.1109/UR52253.2021.9494634</a></p>
         </div>
-        <div class="publication-item">
+        <div class="item publication-item">
             <h3>Improvement of Warehouse Productivity using Autonomous Mobile Robot in Smart Manufacturing Environment</h3>
             <p>Authors: Prajwal Prabhu, Abhra Roy Chowdhury</p>
             <p>Year: 2021</p>
             <p>iRobotics, the Journal of Robotics Society of Taiwan (RST)</p>
         </div>
-        <div class="publication-item">
+        <div class="item publication-item">
             <h3>Interlinking industry 4.0 and academia through robotics and automation: an Indian perspective</h3>
             <p>Authors: P Prabhu, S Raj, AR Chowdhury</p>
             <p>Year: 2020</p>
@@ -188,20 +294,19 @@
             <p><a href="https://www.intechopen.com/chapters/72826">Available from IntechOpen</a></p>
             <p><a href="https://doi.org/10.5772/intechopen.92608">DOI: 10.5772/intechopen.92608</a></p>
         </div>
-        <!-- Add more papers here as needed -->
     </section>
     
     <section id="projects">
         <h2>Relevant Projects</h2>
-        <div class="project-item">
+        <div class="item project-item">
             <h3>Contextual Reasoning Divergence Framework (CRDF): A Lightweight Visual Reasoning approach</h3>
             <ul>
                 <li>Implemented CRDF with Situation Awareness on CIFAR-10/Fashion-MNIST using CNN, ResNet-18, custom ViT, and fine-tuned CLIP; added predictive uncertainty, attention-guided perturbations, and feature stability for robust edge-case detection.</li>
-                <li>Enhanced reasoning divergence (RDS) via iterative local/global masking with attention prioritisation; Integrated Grad-CAM, ViT/CLIP attention maps, and Monte Carlo dropout for explainable failure analysis</li>
-                <li> Optimised for Colab GPU; mixed precision, batch size 16, 3 epochs, memory cleanup; Utilised diagnostic framework.</li>
+                <li>Enhanced reasoning divergence (RDS) via iterative local/global masking with attention prioritization; Integrated Grad-CAM, ViT/CLIP attention maps, and Monte Carlo dropout for explainable failure analysis</li>
+                <li>Optimized for Colab GPU; mixed precision, batch size 16, 3 epochs, memory cleanup; Utilized diagnostic framework.</li>
             </ul>
         </div>
-        <div class="project-item">
+        <div class="item project-item">
             <h3>Ultra-Lightweight CLIP-FBS Recommendation System for CPU-based Environments</h3>
             <ul>
                 <li>Developed a symbolic-multimodal recommendation system integrating real CLIP (ViT-B/32) for vision-language embeddings with a Function-Behaviour-Structure (FBS) knowledge graph and adaptive GNN to fuse symbolic reasoning with neural similarity for interpretable product recommendations.</li>
@@ -209,7 +314,7 @@
                 <li>Engineered feedback-driven graph adaptation using user likes/dislikes to dynamically add edges in the FBS graph, visualized via NetworkX, with on-the-fly GNN retraining and re-encoding to reflect evolving user preferences in real time.</li>
             </ul>
         </div>
-        <div class="project-item">
+        <div class="item project-item">
             <h3>Attention-Guided Active Learning for Vision-Language Models</h3>
             <ul>
                 <li>Proposed an attention-guided active learning framework applicable to transformer-based vision-language models.</li>
@@ -221,7 +326,7 @@
     
     <section id="experience">
         <h2>Work Experience</h2>
-        <div class="experience-item">
+        <div class="item experience-item">
             <h3>Indian Institute of Science</h3>
             <p>Center for Nanoscience and Engineering | Intern | March 2018 - September 2018</p>
             <ul>
@@ -230,11 +335,11 @@
                 <li>Hardware design of the microinverter for silicon-based devices and mapping changes required for GaN based devices for the proposed system designed</li>
             </ul>
         </div>
-        <div class="experience-item">
+        <div class="item experience-item">
             <h3>Bharat Heavy Electricals Limited</h3>
             <p>Intern | May 2014 - July 2014</p>
             <ul>
-                <li>Understand how complex organisations work, which have different disciplines</li>
+                <li>Understand how complex organizations work, which have different disciplines</li>
                 <li>Understand the various components that are involved in thermal power plant</li>
                 <li>Estimate the lighting system requirements for a supercritical thermal power plant</li>
             </ul>
@@ -243,7 +348,7 @@
     
     <section id="education">
         <h2>Education</h2>
-        <div class="education-item">
+        <div class="item education-item">
             <h3>Doctor of Philosophy - Product Design and Engineering</h3>
             <p>Indian Institute of Science | 2020 - Current</p>
             <ul>
@@ -251,11 +356,11 @@
                 <li>The fundamental part of the research looked at assessing the transactions that happen in an organization and how that would lead to the creation of situational awareness. Further how this would lead to identifying potential problems that may affect the organization</li>
             </ul>
         </div>
-        <div class="education-item">
+        <div class="item education-item">
             <h3>Master of Technology - Power Electronics</h3>
             <p>RV College of Engineering | 2017 - 2019</p>
         </div>
-        <div class="education-item">
+        <div class="item education-item">
             <h3>Bachelor of Engineering - Electrical and Electronics</h3>
             <p>Dayananda Sagar Academy of Technology and Management | 2013 - 2017</p>
         </div>
@@ -263,7 +368,7 @@
     
     <section id="skills">
         <h2>Skills</h2>
-        <div class="skills-list">
+        <div class="list skills-list">
             <span>Circuit Design</span>
             <span>Programming</span>
             <span>Embedded System Design</span>
@@ -278,13 +383,14 @@
         <ul class="awards-list">
             <li>Have written articles about interlinking industry 4.0 and academia through robotics with an Indian perspective</li>
             <li>Have been called as an invigilator by my bachelor's alma mater to evaluate the projects done by final semester students</li>
-            <li>I have been certified by Coursera on "Computer vision".</li>
+            <li>I have been certified by coursera on "Computer vision".</li>
         </ul>
     </section>
     
     <section id="contact">
         <h2>Contact</h2>
-        <p class="contact-info">Email: <a href="mailto:prajwal.prabhu10.pp@gmail.com">prajwal.prabhu10.pp@gmail.com</a></p>
+        <p class="contact-info">Email: <a href="mailto:prajwalp@iisc.ac.in">prajwalp@iisc.ac.in</a></p>
+        <p class="contact-info">Phone: +91 – 9980502652</p>
         <p class="contact-info">Google Scholar: <a href="https://scholar.google.com/citations?user=7fJIjAUAAAAJ&hl=en">Profile</a></p>
         <p class="contact-info">LinkedIn: <a href="https://in.linkedin.com/in/prajwal-prabhu-84694a12b">Profile</a></p>
     </section>
